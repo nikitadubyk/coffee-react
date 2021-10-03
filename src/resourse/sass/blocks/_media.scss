@@ -1,0 +1,140 @@
+@media (max-width: 1200px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 991px) {
+    .our-best__wrapper {
+        width: 100%;
+    }
+    .about-beans {
+        &__wrapper {
+            width: 100%;
+            flex-wrap: wrap;
+        }
+    }
+    .price {
+        &__wrapper {
+            width: 100%;
+            flex-wrap: wrap;
+        }
+    }
+    .coffee-info {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: 80%;
+    }
+
+    .our-best__item {
+        margin: 0 5px 20px;
+    }
+    .about-us__text {
+        width: 100%;
+    }
+
+    .about-beans {
+        &__wrapper {
+            justify-content: center;
+        }
+    }
+    .price {
+        &__form {
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 150px;
+        }
+    }
+}
+
+@media (max-width: 575px) {
+    .our-best__wrapper {
+        justify-content: center;
+    }
+    .main {
+        &__title {
+            font-size: 34px;
+        }
+        &__info {
+            margin-top: 50px;
+        }
+        padding: 50px;
+    }
+    .header {
+        padding: 50px;
+        &__title {
+            margin-top: 30px;
+        }
+    }
+    .price {
+        padding: 30px 0 30px 0;
+        &__wrapper {
+            justify-content: center;
+            margin: 30px auto 0 auto;
+        }
+        &__item {
+            margin: 0px 5px 30px;
+        }
+        &__form {
+            height: 200px;
+            &-search {
+                height: 65px;
+                flex-direction: column;
+            }
+            &-filter {
+                width: 100%;
+                height: 75px;
+                flex-direction: column;
+                align-items: center;
+                &__btn {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+            &-button {
+                margin: 0px 5px;
+            }
+        }
+    }
+    .burger {
+        &__menu {
+            margin: 0 auto;
+            width: 100%;
+            flex-direction: column;
+        }
+    }
+    .about-beans {
+        &__img {
+            width: 100%;
+        }
+    }
+    .about-us,
+    .our-best {
+        padding: 50px;
+    }
+    .divider {
+        width: 170px;
+        margin: 20px auto 10px auto;
+    }
+    .footer {
+        padding: 40px 0 15px 0;
+        &__menu {
+            margin: 0 auto;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            &-item:first-child {
+                &:before {
+                    content: '';
+                    left: 45px;
+                }
+            }
+        }
+    }
+}

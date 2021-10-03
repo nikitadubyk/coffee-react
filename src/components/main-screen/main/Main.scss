@@ -1,0 +1,105 @@
+@import '../../../resourse/sass/base/mixins.scss';
+
+.main {
+    min-height: 640px;
+    background-image: url('../../../resourse/img/main_bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 52px 150px 200px 150px;
+    &__menu {
+        color: #fff;
+        width: 350px;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        &-item {
+            position: relative;
+            &:first-child {
+                &::before {
+                    content: '';
+                    background-image: url('../../../resourse/icons/coffee-beans.svg');
+                    position: absolute;
+                    top: -20px;
+                    left: -30px;
+                    z-index: 10;
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+        }
+        &-link {
+            color: #fff;
+            text-decoration: none;
+            &:hover {
+                color: #fff;
+                text-decoration: underline;
+            }
+        }
+    }
+    &__info {
+        margin-top: 110px;
+    }
+    &__title {
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 58px;
+        color: #ffffff;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &__subtitle {
+        text-align: center;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 35px;
+        color: #ffffff;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    &__btn {
+        display: block;
+        margin: 20px auto;
+        padding: 2px 42px;
+        width: 120px;
+        height: 30px;
+        border: 1px solid #ffffff;
+        box-sizing: border-box;
+        filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+        border-radius: 3px;
+        background-color: transparent;
+
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 20px;
+        color: #ffffff;
+        transition: 0.5s all;
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+}
+
+.divider {
+    position: relative;
+    width: 200px;
+    margin: 20px auto 35px auto;
+    &__img {
+        display: block;
+        margin: 0 auto;
+    }
+    &::before,
+    &::after {
+        @include line-before;
+    }
+    &::after {
+        @include line-after;
+    }
+}
+
+.main__info .white {
+    &::before,
+    &::after {
+        border: 1px solid #fff;
+    }
+}

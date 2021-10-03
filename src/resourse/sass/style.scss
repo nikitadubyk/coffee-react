@@ -1,0 +1,40 @@
+@import 'libs/bootstrap-reboot.min.css';
+@import '../fonts/fonts';
+
+@import 'base/mixins';
+@import 'base/variables';
+
+* {
+    font-family: 'Merienda', cursive;
+}
+
+.container {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+@import './blocks/burger';
+
+@import './blocks/main-screen/main';
+@import './blocks/main-screen/about-us';
+@import './blocks/main-screen/our-best';
+@import './blocks/main-screen/footer';
+
+@import './blocks/our-coffee/header';
+@import './blocks/our-coffee/about-beans';
+@import './blocks/our-coffee/price';
+
+@import './blocks/coffee-more-info/coffee-info';
+
+@import './blocks/pleasure/pleasure';
+
+@import './blocks/media';
