@@ -1,0 +1,33 @@
+.about-beans {
+    padding-top: 70px;
+    min-height: 500px;
+    background-color: #fff;
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 750px;
+        margin: 0 auto;
+    }
+    &__title {
+        font-size: 24px;
+        line-height: 35px;
+        text-align: center;
+        color: #000000;
+    }
+    &__descr {
+        width: 350px;
+        text-align: center;
+    }
+    &__img {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.little-divider {
+    width: 240px;
+    height: 0px;
+    margin: 50px auto 0 auto;
+    border: 1px solid #000000;
+}

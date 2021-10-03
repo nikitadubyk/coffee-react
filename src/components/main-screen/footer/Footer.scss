@@ -1,0 +1,35 @@
+.footer {
+    min-height: 150px;
+    padding: 52px 0 20px 0;
+    &__menu {
+        color: #000;
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        margin: 0 auto;
+        &-item {
+            position: relative;
+            &:first-child {
+                &::before {
+                    content: '';
+                    background-image: url('../../../resourse/icons/coffee-beans-dark.svg');
+                    position: absolute;
+                    top: -20px;
+                    left: -30px;
+                    z-index: 10;
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+        }
+        &-link {
+            color: #000;
+            text-decoration: none;
+            &:hover {
+                color: #000;
+                text-decoration: underline;
+            }
+        }
+    }
+}
