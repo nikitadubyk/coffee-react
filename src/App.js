@@ -84,8 +84,8 @@ class App extends Component {
 
     onFilterChange = (data, filter) => {
         switch (filter) {
-            case 'Brasil':
-                return data.filter(item => item.subtitle === 'Brasil');
+            case 'Brazil':
+                return data.filter(item => item.subtitle === 'Brazil');
             case 'Kenya':
                 return data.filter(item => item.subtitle === 'Kenya');
             case 'Columbia':
