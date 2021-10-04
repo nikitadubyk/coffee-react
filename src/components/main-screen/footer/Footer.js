@@ -1,5 +1,4 @@
 import './Footer.scss';
-import logo from '../../../resourse/icons/coffee-beans-dark.svg';
 
 const Footer = () => {
     return (
@@ -25,14 +24,6 @@ const Footer = () => {
                         </a>
                     </li>
                 </ul>
-
-                <div className='divider'>
-                    <img
-                        src={logo}
-                        alt='coffee-beans'
-                        className='divider__img'
-                    />
-                </div>
             </div>
         </footer>
     );

@@ -3,26 +3,26 @@ import logo from '../../../resourse/icons/coffee-beans-middle-dark.svg';
 
 const AboutBeans = props => {
     return (
-        <section class='about-beans'>
-            <div class='container'>
-                <div class='about-beans__wrapper'>
+        <section className='about-beans'>
+            <div className='container'>
+                <div className='about-beans__wrapper'>
                     <img
                         src={props.logo}
                         alt='cup of coffee'
-                        class='about-beans__img'
+                        className='about-beans__img'
                     />
 
-                    <div class='about-beans__descr'>
-                        <h2 class='about-beans__title'>About Us</h2>
-                        <div class='divider'>
+                    <div className='about-beans__descr'>
+                        <h2 className='about-beans__title'>About Us</h2>
+                        <div className='divider'>
                             <img
                                 src={logo}
                                 alt='coffee-beans'
-                                class='divider__img'
+                                className='divider__img'
                             />
                         </div>
 
-                        <div class='about-beans__text'>
+                        <div className='about-beans__text'>
                             Extremity sweetness difficult behaviour he of. On
                             disposal of as landlord horrible.
                             <br />
@@ -37,7 +37,7 @@ const AboutBeans = props => {
                     </div>
                 </div>
 
-                <div class='little-divider'></div>
+                <div className='little-divider'></div>
             </div>
         </section>
     );
