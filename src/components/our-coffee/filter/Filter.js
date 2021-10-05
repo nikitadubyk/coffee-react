@@ -8,6 +8,11 @@ class Filter extends Component {
         this.state = {
             term: '',
             filter: '',
+            buttonData: [
+                { name: 'Brazil', id: 1 },
+                { name: 'Kenya', id: 2 },
+                { name: 'Columbia', id: 3 },
+            ],
         };
     }
 
@@ -32,13 +37,22 @@ class Filter extends Component {
                 <div className='price__form-filter'>
                     <div className='price__form-subtitle'>Or filter</div>
                     <div className='price__form-filter__btn'>
-                        <button
-                            className='price__form-button active'
+                        {this.state.buttonData.map(({ name, id }) => (
+                            <button
+                                className={'price__form-button'}
+                                onClick={() => this.props.onChangeFilter(name)}
+                                key={id}
+                            >
+                                {name}
+                            </button>
+                        ))}
+                        {/* <button
+                            className='price__form-button'
                             onClick={() => this.props.onChangeFilter('Brazil')}
                         >
                             Brazil
-                        </button>
-                        <button
+                        </button> */}
+                        {/* <button
                             className='price__form-button'
                             onClick={() => this.props.onChangeFilter('Kenya')}
                         >
@@ -51,7 +65,7 @@ class Filter extends Component {
                             }
                         >
                             Columbia
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>

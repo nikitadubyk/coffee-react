@@ -69,7 +69,6 @@ class App extends Component {
 
     onChangeFilter = filter => {
         this.setState({ filter });
-        console.log(filter);
     };
 
     onSearch = (data, term) => {
@@ -105,6 +104,7 @@ class App extends Component {
                 <Filter
                     onChangeTerm={this.onChangeTerm}
                     onChangeFilter={this.onChangeFilter}
+                    filter={filter}
                 />
                 <Price data={visible} />
                 <Footer />
