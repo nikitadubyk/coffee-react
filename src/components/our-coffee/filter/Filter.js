@@ -9,9 +9,9 @@ class Filter extends Component {
             term: '',
             filter: '',
             buttonData: [
-                { name: 'Brazil', id: 1 },
-                { name: 'Kenya', id: 2 },
-                { name: 'Columbia', id: 3 },
+                { name: 'Brazil', id: 0 },
+                { name: 'Kenya', id: 1 },
+                { name: 'Columbia', id: 2 },
             ],
         };
     }
@@ -20,6 +20,18 @@ class Filter extends Component {
         const term = e.target.value;
         this.setState({ term });
         this.props.onChangeTerm(term);
+    };
+
+    buttonsRef = [];
+
+    setRef = ref => {
+        this.buttonsRef.push(ref);
+    };
+
+    onActiveButton = id => {
+        this.buttonsRef.forEach(btn => btn.classList.remove('active'));
+        this.buttonsRef[id].classList.add('active');
+        this.buttonsRef[id].focus();
     };
 
     render() {
@@ -40,7 +52,11 @@ class Filter extends Component {
                         {this.state.buttonData.map(({ name, id }) => (
                             <button
                                 className={'price__form-button'}
-                                onClick={() => this.props.onChangeFilter(name)}
+                                onClick={() => {
+                                    this.props.onChangeFilter(name);
+                                    this.onActiveButton(id);
+                                }}
+                                ref={this.setRef}
                                 key={id}
                             >
                                 {name}
