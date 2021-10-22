@@ -3,9 +3,12 @@
     &__wrapper {
         width: 805px;
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
         align-items: center;
         margin: 60px auto 0 auto;
+        justify-content: center;
+    }
+    &__item {
+        margin: 0 20px 40px;
     }
 }

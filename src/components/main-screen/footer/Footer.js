@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import './Footer.scss';
 
 const Footer = () => {
@@ -6,22 +8,19 @@ const Footer = () => {
             <div className='container'>
                 <ul className='footer__menu'>
                     <li className='footer__menu-item'>
-                        <a href='/index.html' className='footer__menu-link'>
+                        <Link to='/' className='footer__menu-link'>
                             Coffee house
-                        </a>
+                        </Link>
                     </li>
                     <li className='footer__menu-item'>
-                        <a
-                            href='/our-coffee.html'
-                            className='footer__menu-link'
-                        >
+                        <Link to='/our-coffee' className='footer__menu-link'>
                             Our coffee
-                        </a>
+                        </Link>
                     </li>
                     <li className='footer__menu-item'>
-                        <a href='/pleasure.html' className='footer__menu-link'>
+                        <Link to='/pleasure' className='footer__menu-link'>
                             For your pleasure
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </div>

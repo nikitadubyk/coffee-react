@@ -13,7 +13,7 @@ const AboutBeans = props => {
                     />
 
                     <div className='about-beans__descr'>
-                        <h2 className='about-beans__title'>About Us</h2>
+                        <h2 className='about-beans__title'>About our beans</h2>
                         <div className='divider'>
                             <img
                                 src={logo}

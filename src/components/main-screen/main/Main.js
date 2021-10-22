@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import Burger from '../burger/Burger';
 import logo from '../../../resourse/icons/coffee-beans-middle.svg';
 import './Main.scss';
@@ -25,7 +27,9 @@ const Main = () => {
                     Want to try our beans?
                 </h2>
 
-                <button className='main__btn'>More</button>
+                <Link to='/our-coffee' exact className='main__btn'>
+                    More
+                </Link>
             </div>
         </main>
     );

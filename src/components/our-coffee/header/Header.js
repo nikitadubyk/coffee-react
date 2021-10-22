@@ -1,11 +1,15 @@
 import './Header.scss';
 import Burger from '../../main-screen/burger/Burger';
 
-const Header = () => {
+const Header = props => {
     return (
-        <header className='header'>
+        <header
+            className={`header ${
+                props.pleasure === 'true' ? 'pleasure' : null
+            }`}
+        >
             <Burger />
-            <h2 className='header__title'>Our Coffee</h2>
+            <h2 className='header__title'>{props.title}</h2>
         </header>
     );
 };

@@ -1,92 +1,64 @@
-import { Component } from 'react';
+import { useState } from 'react';
 
 import './Filter.scss';
 
-class Filter extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            term: '',
-            filter: '',
-            buttonData: [
-                { name: 'Brazil', id: 0 },
-                { name: 'Kenya', id: 1 },
-                { name: 'Columbia', id: 2 },
-            ],
-        };
-    }
+const Filter = props => {
+    const [term, setTerm] = useState('');
+    const [buttonData, setButtonData] = useState([
+        { name: 'Brazil', id: 0 },
+        { name: 'Kenya', id: 1 },
+        { name: 'Columbia', id: 2 },
+    ]);
 
-    onChange = e => {
+    const onChange = e => {
         const term = e.target.value;
-        this.setState({ term });
-        this.props.onChangeTerm(term);
+        setTerm(term);
+        props.onChangeTerm(term);
     };
 
-    buttonsRef = [];
+    const buttonsRef = [];
 
-    setRef = ref => {
-        this.buttonsRef.push(ref);
+    const setRef = ref => {
+        buttonsRef.push(ref);
     };
 
-    onActiveButton = id => {
-        this.buttonsRef.forEach(btn => btn.classList.remove('active'));
-        this.buttonsRef[id].classList.add('active');
-        this.buttonsRef[id].focus();
+    const onActiveButton = id => {
+        buttonsRef.forEach(btn => btn.classList.remove('active'));
+        buttonsRef[id].classList.add('active');
+        buttonsRef[id].focus();
     };
 
-    render() {
-        return (
-            <div className='price__form'>
-                <div className='price__form-search'>
-                    <div className='price__form-subtitle'>Lookiing for</div>
-                    <input
-                        type='text'
-                        className='price__form-input'
-                        placeholder='start typing here...'
-                        onChange={this.onChange}
-                    />
-                </div>
-                <div className='price__form-filter'>
-                    <div className='price__form-subtitle'>Or filter</div>
-                    <div className='price__form-filter__btn'>
-                        {this.state.buttonData.map(({ name, id }) => (
-                            <button
-                                className={'price__form-button'}
-                                onClick={() => {
-                                    this.props.onChangeFilter(name);
-                                    this.onActiveButton(id);
-                                }}
-                                ref={this.setRef}
-                                key={id}
-                            >
-                                {name}
-                            </button>
-                        ))}
-                        {/* <button
-                            className='price__form-button'
-                            onClick={() => this.props.onChangeFilter('Brazil')}
-                        >
-                            Brazil
-                        </button> */}
-                        {/* <button
-                            className='price__form-button'
-                            onClick={() => this.props.onChangeFilter('Kenya')}
-                        >
-                            Kenya
-                        </button>
+    return (
+        <div className='price__form'>
+            <div className='price__form-search'>
+                <div className='price__form-subtitle'>Lookiing for</div>
+                <input
+                    type='text'
+                    className='price__form-input'
+                    placeholder='start typing here...'
+                    onChange={onChange}
+                />
+            </div>
+            <div className='price__form-filter'>
+                <div className='price__form-subtitle'>Or filter</div>
+                <div className='price__form-filter__btn'>
+                    {buttonData.map(({ name, id }) => (
                         <button
-                            className='price__form-button'
-                            onClick={() =>
-                                this.props.onChangeFilter('Columbia')
-                            }
+                            className={'price__form-button'}
+                            onClick={() => {
+                                props.onChangeFilter(name);
+                                onActiveButton(id);
+                            }}
+                            ref={setRef}
+                            key={id}
                         >
-                            Columbia
-                        </button> */}
-                    </div>
+                            {name}
+                        </button>
+                    ))}
                 </div>
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
 
 export default Filter;

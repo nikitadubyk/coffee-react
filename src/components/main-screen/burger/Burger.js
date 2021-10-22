@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './Burger.scss';
 
 const Burger = () => {
@@ -5,19 +6,43 @@ const Burger = () => {
         <div className='burger'>
             <ul className='burger__menu'>
                 <li className='burger__menu-item'>
-                    <a href='/#' className='burger__menu-link'>
+                    <NavLink
+                        to='/'
+                        activeStyle={{
+                            textDecoration: 'underline',
+                            background: 'transparent',
+                        }}
+                        exact
+                        className='burger__menu-link'
+                    >
                         Coffee house
-                    </a>
+                    </NavLink>
                 </li>
                 <li className='burger__menu-item'>
-                    <a href='/#' className='burger__menu-link'>
+                    <NavLink
+                        to='/our-coffee'
+                        exact
+                        activeStyle={{
+                            textDecoration: 'underline',
+                            background: 'transparent',
+                        }}
+                        className='burger__menu-link'
+                    >
                         Our coffee
-                    </a>
+                    </NavLink>
                 </li>
                 <li className='burger__menu-item'>
-                    <a href='/#' className='burger__menu-link'>
+                    <NavLink
+                        to='/pleasure'
+                        activeStyle={{
+                            textDecoration: 'underline',
+                            background: 'transparent',
+                        }}
+                        exact
+                        className='burger__menu-link'
+                    >
                         For your pleasure
-                    </a>
+                    </NavLink>
                 </li>
             </ul>
         </div>
