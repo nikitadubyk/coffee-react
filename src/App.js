@@ -2,7 +2,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import './resourse/sass/libs/bootstrap-reboot.min.css';
 import './App.css';
-import { MainPage, OurCoffeePage, PleasurePage } from './components/pages';
+import {
+    MainPage,
+    OurCoffeePage,
+    PleasurePage,
+    CoffeeSinglePage,
+} from './components/pages';
 
 const App = () => {
     return (
@@ -16,6 +21,9 @@ const App = () => {
                 </Route>
                 <Route exact path='/pleasure'>
                     <PleasurePage />
+                </Route>
+                <Route path='/coffee/:coffeeId'>
+                    <CoffeeSinglePage />
                 </Route>
             </Switch>
         </Router>

@@ -1,17 +1,25 @@
-import Cards from '../cards/Cards';
+import { Link } from 'react-router-dom';
+import '../cards/Cards.scss';
 import './Price.scss';
 
 const Price = ({ data }) => {
     return (
         <section className='price__wrapper'>
             {data.map(card => (
-                <Cards
-                    img={card.img}
-                    title={card.title}
-                    subtitle={card.subtitle}
-                    price={card.price}
+                <Link
+                    to={`/coffee/${card.id}`}
+                    className='price__item'
                     key={card.id}
-                />
+                >
+                    <img
+                        src={card.img}
+                        alt='img coffee'
+                        className='price__item-img'
+                    />
+                    <h3 className='price__item-title'>{card.title}</h3>
+                    <div className='price__item-subtitle'>{card.subtitle}</div>
+                    <div className='price__item-price'>{card.price}</div>
+                </Link>
             ))}
         </section>
     );
