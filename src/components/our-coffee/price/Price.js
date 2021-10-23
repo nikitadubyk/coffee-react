@@ -10,6 +10,7 @@ const Price = ({ data }) => {
                     to={`/coffee/${card.id}`}
                     className='price__item'
                     key={card.id}
+                    style={{ textDecoration: 'none' }}
                 >
                     <img
                         src={card.img}

@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 
+import dataCoffee from '../services/data';
+import ErrorBoundary from '../errorBoundary/ErrorBoundary';
 import Header from '../our-coffee/header/Header';
 import Footer from '../main-screen/footer/Footer';
 import logo from '../../resourse/icons/coffee-beans-middle-dark.svg';
@@ -8,81 +10,38 @@ import './coffee-info.scss';
 
 const CoffeeSinglePage = () => {
     const { coffeeId } = useParams();
-    const [data, setData] = useState([
-        {
-            img: 'img/coffee-main.jpg',
-            title: 'Aromistico Coffee 1 kg',
-            subtitle: 'Brazil',
-            price: '6.99$',
-            id: 1,
-        },
-        {
-            img: 'img/coffee-main.jpg',
-            title: 'Aromistico Coffee 1 kg',
-            subtitle: 'Kenya',
-            price: '6.99$',
-            id: 2,
-        },
-        {
-            img: 'img/coffee-main.jpg',
-            title: 'Aromistico Coffee 1 kg',
-            subtitle: 'Columbia',
-            price: '6.99$',
-            id: 3,
-        },
-        {
-            img: 'img/coffee-main.jpg',
-            title: 'Vova Coffee 1 kg',
-            subtitle: 'Kenya',
-            price: '6.99$',
-            id: 4,
-        },
-        {
-            img: 'img/coffee-main.jpg',
-            title: 'Oksana Coffee 1 kg',
-            subtitle: 'Columbia',
-            price: '6.99$',
-            id: 5,
-        },
-        {
-            img: 'img/coffee-main.jpg',
-            title: 'Nikita Coffee 1 kg',
-            subtitle: 'Brazil',
-            price: '6.99$',
-            id: 6,
-        },
-    ]);
+    const [data, setData] = useState(dataCoffee);
     const [coffee, setCoffee] = useState([]);
+
+    const findCoffee = coffeeId => {
+        const id = +coffeeId;
+        const filteredCoffee = data.find(item => item.id === id);
+        setCoffee(filteredCoffee);
+    };
 
     useEffect(() => {
         findCoffee(coffeeId);
-    }, [coffeeId]);
-
-    const findCoffee = id => {
-        const number = +id;
-        const filterCoffee = data.filter(item => item.id === number);
-        console.log(filterCoffee);
-        setCoffee(data.filter(item => item.id === number));
-        console.log(coffee);
-    };
+    }, [findCoffee]);
 
     return (
         <>
             <Header />
-            <View data={coffee} />
+            <ErrorBoundary>
+                <View data={coffee} />
+            </ErrorBoundary>
             <Footer />
         </>
     );
 };
 
 const View = props => {
-    const { img, title, subtitle, price } = props.data;
+    const { title, subtitle, img, price } = props.data;
     return (
-        <section className='about-beans'>
+        <div className='about-beans'>
             <div className='container'>
                 <div className='about-beans__wrapper coffee-info'>
                     <img
-                        src={'../../resourse' + img}
+                        src='/img/coffee-pic.jpg'
                         alt={title}
                         className='about-beans__img'
                     />
@@ -112,13 +71,13 @@ const View = props => {
                             <br />
                             <div className='about-beans__price'>
                                 <span className='text_bold'>Price:</span>
-                                <span className='big-price'>{price}</span>
+                                <span className='big-price'> {price}</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 };
 

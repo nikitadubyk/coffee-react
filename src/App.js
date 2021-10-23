@@ -22,7 +22,7 @@ const App = () => {
                 <Route exact path='/pleasure'>
                     <PleasurePage />
                 </Route>
-                <Route path='/coffee/:coffeeId'>
+                <Route exact path='/coffee/:coffeeId'>
                     <CoffeeSinglePage />
                 </Route>
             </Switch>
