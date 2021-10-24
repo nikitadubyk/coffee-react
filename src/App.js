@@ -7,6 +7,7 @@ import {
     OurCoffeePage,
     PleasurePage,
     CoffeeSinglePage,
+    Page404,
 } from './components/pages';
 
 const App = () => {
@@ -24,6 +25,9 @@ const App = () => {
                 </Route>
                 <Route exact path='/coffee/:coffeeId'>
                     <CoffeeSinglePage />
+                </Route>
+                <Route exact path='*'>
+                    <Page404 />
                 </Route>
             </Switch>
         </Router>
